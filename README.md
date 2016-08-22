@@ -18,9 +18,9 @@ In ofApp.h:
 	};
 ```
 
-```
 In ofApp.cpp:
-	ofApp::setup() {
+```
+ofApp::setup() {
 		zed.setResolution(ZED_RESOLUTION_HD720);
 		zed.setFps(30);			
 		//see zed.set... functions for more settings
@@ -53,7 +53,7 @@ In ofApp.cpp:
 
 ##Advanced usage
 
-See an example distributed with addon, and ofxKuZed class declaration below.
+See an example '''zedExample''' distributed with addon, and '''ofxKuZed.h''' file.
 
 ##Requirements
 Currently addon is tested on Windows 10.
@@ -64,16 +64,20 @@ To compile the addon's example you need:
 * openFrameworks 0.9.3
 
 * Installed Cuda 7.5 (and NVidia videocard)
+
    If you are using another CUDA:
-   - write proper path in parameter <CUDA_DIR> in file zedExample.vcxproj
+   
+       Write proper path in parameter <CUDA_DIR> in file zedExample.vcxproj
 
 * Installed ZED SDK (example project is configured for ZED_SDK_WinSetup_v1.0.0c.exe)
    If you are using another ZED SDK (version<1.0.0):
-   - write proper path in <ZED_SDK_DIR> in file zedExample.vcxproj
-   - adjust project's properties to valid paths and libs names in the following settings:
-      C/C++ - General - Additional include directories
-	  Linker - General - Additional library directories
-	  Linker - Input - Additional dependencies
+   
+       Write proper path in <ZED_SDK_DIR> in file zedExample.vcxproj,
+   
+       Adjust project's properties to valid paths and libs names in the following settings:
+       - C/C++ - General - Additional include directories
+	   - Linker - General - Additional library directories
+	   - Linker - Input - Additional dependencies
 
 To run the example you need:
 * ZED camera
