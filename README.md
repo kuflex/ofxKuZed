@@ -1,7 +1,7 @@
 #ofxKuZed
 Addon for working with StereoLab ZED camera in openFrameworks.
 Features:
-* It wraps all basic camera settings
+* It wraps all basic camera settings such as resolution, fps and depth computing quality
 * It provides CPU-access to:
   - left and right rectified RGB images (as ofPixels, ofTexture)
   - depth data in millimeters (as ofFloatPixels, ofPixels, ofTexture)
