@@ -1,8 +1,12 @@
 #ofxKuZed
-Addon for working with StereoLab ZED camera in openFrameworks, including grabbing and drawing RGB and depth images and point cloud.
-
-It uses "lazy" updating of all pixel arrays and textures.
-Namely, they are updated only by request. It saves CPU resources a much.
+Addon for working with StereoLab ZED camera in openFrameworks.
+Features:
+* It wraps all basic camera settings
+* It provides CPU-access to 
+  - left and right rectified RGB images (ofPixels, ofTexture)
+  - depth data in millimeters (ofFloatPixels, ofPixels, ofTexture)
+  - point cloud with colors (vector<ofPoint>, vector<ofColor>)
+* It uses "lazy" updating of all pixel arrays and textures: they are updated only by request to save CPU resources.
 
 ##Simple usage:
 
@@ -92,5 +96,6 @@ The addon is based on
 Addon is written by Kuflex lab, https://github.com/kuflex/ofxKuZed
 
 TODOs: 
-* port to Linux
-* make masking using GPU
+* Implement settings for RGB images (brightness, contrast)
+* Port to Linux
+* Make masking using GPU
