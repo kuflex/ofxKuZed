@@ -13,6 +13,8 @@ ZED camera is a passive stereo camera, allowing to obtain depth data on sunlight
   - depth data in millimeters (as ofFloatPixels, ofPixels, ofTexture)
   - point cloud with colors (as vectors of ofPoint and ofColor)
 * It uses "lazy" updating of all pixel arrays and textures: they are updated only by request to save CPU resources.
+* It includes an example '''zedExample''', demonstrating work with RGB and depth images, and point cloud from camera.
+![zedCamera](https://github.com/kuflex/ofxKuZed/raw/master/docs/ofxKuZed-1.jpg "zedCamera example")
 
 ##Simple usage:
 
