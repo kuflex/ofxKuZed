@@ -1,8 +1,9 @@
 #ofxKuZed
 Addon for working with StereoLab ZED camera in openFrameworks.
+
 Features:
 * It wraps all basic camera settings such as resolution, fps and depth computing quality
-* It provides CPU-access to:
+* It provides CPU-access to: 
   - left and right rectified RGB images (as ofPixels, ofTexture)
   - depth data in millimeters (as ofFloatPixels, ofPixels, ofTexture)
   - point cloud with colors (as vectors of ofPoint and ofColor)
@@ -74,7 +75,8 @@ To compile the addon's example you need:
        Write proper path in parameter <CUDA_DIR> in file zedExample.vcxproj
 
 * Installed ZED SDK (example project is configured for ZED_SDK_WinSetup_v1.0.0c.exe)
-   If you are using another ZED SDK (version<1.0.0):
+
+   If you are using older ZED SDK, you need:
    
        Write proper path in <ZED_SDK_DIR> in file zedExample.vcxproj,
    
