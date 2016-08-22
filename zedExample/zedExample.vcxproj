@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup>
+    <ZED_SDK_DIR>C:\Program Files (x86)\ZED SDK</ZED_SDK_DIR>
+  </PropertyGroup>
+  <PropertyGroup>
+    <CUDA_DIR>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\</CUDA_DIR>
+  </PropertyGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{7FD42DF7-442E-479A-BA76-D0022F99702A}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>ZED_Viewer</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <ProjectName>zedExample</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\libs\openFrameworksCompiled\project\vs\openFrameworksRelease.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\libs\openFrameworksCompiled\project\vs\openFrameworksRelease.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\libs\openFrameworksCompiled\project\vs\openFrameworksDebug.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\libs\openFrameworksCompiled\project\vs\openFrameworksDebug.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>bin\</OutDir>
+    <IntDir>obj\$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)_debug</TargetName>
+    <LinkIncremental>true</LinkIncremental>
+    <GenerateManifest>true</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>bin\</OutDir>
+    <IntDir>obj\$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)_debug</TargetName>
+    <LinkIncremental>true</LinkIncremental>
+    <GenerateManifest>true</GenerateManifest>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>bin\</OutDir>
+    <IntDir>obj\$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>bin\</OutDir>
+    <IntDir>obj\$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <AdditionalIncludeDirectories>$(ZED_SDK_DIR)\dependencies\opencv_2.4.9\include\opencv;$(ZED_SDK_DIR)\dependencies\opencv_2.4.9\include;$(ZED_SDK_DIR)\include;$(ZED_SDK_DIR)\include\zed;$(CUDA_DIR)\include;src;src\example;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ZED_SDK_DIR)/lib;$(ZED_SDK_DIR)/lib/$(Configuration);$(ZED_SDK_DIR)/dependencies/freeglut_2.8/$(Platform);$(ZED_SDK_DIR)/dependencies/freeglut_2.8/$(Platform)/$(Configuration);$(ZED_SDK_DIR)/dependencies/glew-1.12.0/$(Platform)/$(Configuration);$(ZED_SDK_DIR)/dependencies/glew-1.12.0/$(Platform);$(ZED_SDK_DIR)/dependencies/opencv_2.4.9/$(Platform)/vc11/lib;$(ZED_SDK_DIR)/dependencies/opencv_2.4.9/$(Platform)/vc11/lib/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <AdditionalIncludeDirectories>$(ZED_SDK_DIR)\dependencies\opencv_3.1.0\include\opencv;$(ZED_SDK_DIR)\dependencies\opencv_3.1.0\include;$(ZED_SDK_DIR)\dependencies\eigen-3.2.8;$(ZED_SDK_DIR)\include;$(ZED_SDK_DIR)\include\zed;$(CUDA_DIR)\include;..\..\..\addons\ofxKuZed\src;src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;sl_zed64.lib;glu32.lib;opengl32.lib;freeglut.lib;$(ZED_SDK_DIR)\dependencies\opencv_3.1.0\x64\vc14\lib\opencv_world310d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ZED_SDK_DIR)/lib;$(ZED_SDK_DIR)/lib/$(Configuration);$(ZED_SDK_DIR)/dependencies/freeglut_2.8/$(Platform);$(ZED_SDK_DIR)/dependencies/freeglut_2.8/$(Platform)/$(Configuration);$(ZED_SDK_DIR)/dependencies/glew-1.12.0/$(Platform)/$(Configuration);$(ZED_SDK_DIR)/dependencies/glew-1.12.0/$(Platform);$(ZED_SDK_DIR)/dependencies/opencv_2.4.9/$(Platform)/vc11/lib;$(ZED_SDK_DIR)/dependencies/opencv_2.4.9/$(Platform)/vc11/lib/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <AdditionalIncludeDirectories>$(ZED_SDK_DIR)\dependencies\opencv_2.4.9\include\opencv;$(ZED_SDK_DIR)\dependencies\opencv_2.4.9\include;$(ZED_SDK_DIR)\include;$(ZED_SDK_DIR)\include\zed;$(CUDA_DIR)\include;src;src\example;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ZED_SDK_DIR)/lib;$(ZED_SDK_DIR)/lib/$(Configuration);$(ZED_SDK_DIR)/dependencies/freeglut_2.8/$(Platform);$(ZED_SDK_DIR)/dependencies/freeglut_2.8/$(Platform)/$(Configuration);$(ZED_SDK_DIR)/dependencies/glew-1.12.0/$(Platform)/$(Configuration);$(ZED_SDK_DIR)/dependencies/glew-1.12.0/$(Platform);$(ZED_SDK_DIR)/dependencies/opencv_2.4.9/$(Platform)/vc11/lib;$(ZED_SDK_DIR)/dependencies/opencv_2.4.9/$(Platform)/vc11/lib/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <AdditionalIncludeDirectories>$(ZED_SDK_DIR)\dependencies\opencv_3.1.0\include\opencv;$(ZED_SDK_DIR)\dependencies\opencv_3.1.0\include;$(ZED_SDK_DIR)\dependencies\eigen-3.2.8;$(ZED_SDK_DIR)\include;$(ZED_SDK_DIR)\include\zed;$(CUDA_DIR)\include;..\..\..\addons\ofxKuZed\src;src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <Link>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;sl_zed64.lib;glu32.lib;opengl32.lib;freeglut.lib;$(ZED_SDK_DIR)\dependencies\opencv_3.1.0\x64\vc14\lib\opencv_world310.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ZED_SDK_DIR)/lib;$(ZED_SDK_DIR)/lib/$(Configuration);$(ZED_SDK_DIR)/dependencies/freeglut_2.8/$(Platform);$(ZED_SDK_DIR)/dependencies/freeglut_2.8/$(Platform)/$(Configuration);$(ZED_SDK_DIR)/dependencies/glew-1.12.0/$(Platform)/$(Configuration);$(ZED_SDK_DIR)/dependencies/glew-1.12.0/$(Platform);$(ZED_SDK_DIR)/dependencies/opencv_2.4.9/$(Platform)/vc11/lib;$(ZED_SDK_DIR)/dependencies/opencv_2.4.9/$(Platform)/vc11/lib/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectReference Include="$(OF_ROOT)\libs\openFrameworksCompiled\project\vs\openframeworksLib.vcxproj">
+      <Project>{5837595d-aca9-485c-8e76-729040ce4b0b}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="icon.rc">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">/D_DEBUG %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">/D_DEBUG %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(OF_ROOT)\libs\openFrameworksCompiled\project\vs</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\ofxKuZed.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\ofApp.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\ofxKuZed.h" />
+    <ClInclude Include="src\ofApp.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="icon.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
