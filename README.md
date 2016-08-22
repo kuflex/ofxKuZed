@@ -1,7 +1,11 @@
 #ofxKuZed
 Addon for working with StereoLab ZED camera in openFrameworks.
 
-Features:
+ZED camera is a passive stereo camera, allowing to obtain depth data on sunlight at distance 20 meters.
+* https://www.stereolabs.com/zed/specs/
+* https://kuflex.wordpress.com/2016/08/18/overview-of-stereolabs-zed-camera-lightweight-outdoors-depth-camera/
+
+##Addon's features
 * It wraps all basic camera settings such as resolution, fps and depth computing quality
 * It provides CPU-access to: 
   - left and right rectified RGB images (as ofPixels, ofTexture)
@@ -72,13 +76,13 @@ To compile the addon's example you need:
 
    If you are using another CUDA:
    
-       Write proper path in parameter <CUDA_DIR> in file zedExample.vcxproj
+       Write proper path in parameter <CUDA_DIR> in file '''zedExample.vcxproj'''
 
-* Installed ZED SDK (example project is configured for ZED_SDK_WinSetup_v1.0.0c.exe)
+* Installed ZED SDK (example project is configured for '''ZED_SDK_WinSetup_v1.0.0c.exe''')
 
    If you are using older ZED SDK, you need:
    
-       Write proper path in <ZED_SDK_DIR> in file zedExample.vcxproj,
+       Write proper path in <ZED_SDK_DIR> in file''' zedExample.vcxproj''',
    
        Adjust project's properties to valid paths and libs names in the following settings:
        - C/C++ - General - Additional include directories
@@ -97,7 +101,7 @@ The addon is based on
 
 Addon is written by Kuflex lab, https://github.com/kuflex/ofxKuZed
 
-TODOs: 
+###TODOs: 
 * Implement settings for RGB images (brightness, contrast)
 * Port to Linux
 * Make masking using GPU
