@@ -2,10 +2,10 @@
 Addon for working with StereoLab ZED camera in openFrameworks.
 Features:
 * It wraps all basic camera settings
-* It provides CPU-access to 
-  - left and right rectified RGB images (ofPixels, ofTexture)
-  - depth data in millimeters (ofFloatPixels, ofPixels, ofTexture)
-  - point cloud with colors (vector<ofPoint>, vector<ofColor>)
+* It provides CPU-access to:
+  - left and right rectified RGB images (as ofPixels, ofTexture)
+  - depth data in millimeters (as ofFloatPixels, ofPixels, ofTexture)
+  - point cloud with colors (as vectors of ofPoint and ofColor)
 * It uses "lazy" updating of all pixel arrays and textures: they are updated only by request to save CPU resources.
 
 ##Simple usage:
