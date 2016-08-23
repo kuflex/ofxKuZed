@@ -43,6 +43,7 @@ ofApp::setup() {
 		zed.update();
 		//ofPixels &left = zed.getLeftPixels();	//access to left image colors
 		//ofFloatPixels &depth_mm = zed.getDepthPixels_mm(); //access to depth
+		//vector<ofPoint> &points = zed.getPointCloud();	//access to point cloud
 	}
 
 	void ofApp::draw()	{
