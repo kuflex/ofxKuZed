@@ -105,9 +105,10 @@ The addon is based on
 Addon is written by Kuflex lab, https://github.com/kuflex/ofxKuZed
 
 ###TODOs: 
-* Implement settings for RGB images (brightness, contrast)
 * Port to Linux
-* Make masking using GPU
+* Implement settings for RGB images (brightness, contrast)
+* Implement masking using GPU
+* Implement recording/playing SVO
 ==============================================================================*/
 
 #pragma once
