@@ -20,4 +20,4 @@ Keys:
 Requirements and installation details see in addon's file ofxKuZed.h
 
 ##Compiled binaries
-Compiled binaries is here: https://sourceforge.net/projects/ofxkuzed-zedexample/
+Compiled binaries are here: https://sourceforge.net/projects/ofxkuzed-zedexample/
