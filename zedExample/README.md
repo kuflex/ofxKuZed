@@ -18,3 +18,6 @@ Keys:
 * '-','=' - adjust threshold
 
 Requirements and installation details see in addon's file ofxKuZed.h
+
+##Compiled example
+Compiled example is here: https://sourceforge.net/projects/ofxkuzed-zedexample/
