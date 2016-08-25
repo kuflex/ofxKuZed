@@ -14,7 +14,13 @@ ZED camera is a passive stereo camera, allowing to obtain depth data on sunlight
   - point cloud with colors (as vectors of ofPoint and ofColor)
 * It uses "lazy" updating of all pixel arrays and textures: they are updated only by request to save CPU resources.
 * It includes an example '''zedExample''', demonstrating work with RGB and depth images, and point cloud from camera.
+
 ![zedCamera](https://github.com/kuflex/ofxKuZed/raw/master/docs/ofxKuZed-1.jpg "zedCamera example")
+
+##Compiled example
+Binaries of the compiled example are here: https://sourceforge.net/projects/ofxkuzed-zedexample/
+
+(Windows, Visual Studio 2015 Community C++, openFrameworks 0.9.3)
 
 ##Simple usage:
 
@@ -73,16 +79,16 @@ Currently addon is tested on Windows 10.
 
 To compile the addon's example you need:
 * Windows
-* Installed Microsoft Visual Studio 2015 Community
+* Installed Microsoft Visual Studio 2015 Community C++
 * openFrameworks 0.9.3
 
-* Installed Cuda 7.5 (and NVidia videocard)
+* Installed Cuda 7.5 (and NVidia videocard) https://cloud.mail.ru/public/79z4/164HTQkeq
 
    If you are using another CUDA:
    
        Write proper path in parameter <CUDA_DIR> in file '''zedExample.vcxproj'''
 
-* Installed ZED SDK (example project is configured for '''ZED_SDK_WinSetup_v1.0.0c.exe''')
+* Installed ZED SDK (example project is configured for '''ZED_SDK_WinSetup_v1.0.0c.exe''')  https://cloud.mail.ru/public/8Luw/yPxdYh91A
 
    If you are using older ZED SDK, you need:
    
