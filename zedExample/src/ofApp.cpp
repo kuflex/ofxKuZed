@@ -48,7 +48,7 @@ void ofApp::draw()
 		ofSetColor(255);
 		zed.drawLeft(0, 0, W / 2, H / 2);
 		zed.drawRight(W / 2, 0, W / 2, H / 2);
-		zed.drawDepth(0, H / 2, W / 2, H / 2, 0, 5000);
+		zed.drawDepth(0, H / 2, W / 2, H / 2, 0, view_range_mm);
 
 		maskedTexture.draw(W / 2, H / 2, W / 2, H / 2);
 	}
@@ -64,8 +64,9 @@ void ofApp::draw()
 	if (zed.started()) info += "ZED started"; 
 	else info += "ZED not started";
 	info += ", " + ofToString(zed.getWidth()) + " x " + ofToString(zed.getHeight());
-	info += ", camera fps " + ofToString(zed.getFps()) + ", keys: 1,2-page, -,= - threshold";
-	info += "\nthreshold_mm: " + ofToString(threshold_mm) + "    FPS: " + ofToString(ofGetFrameRate());
+	info += ", camera fps " + ofToString(zed.getFps()) + ", keys: 1,2 switch page, 9,0 adjust view_range_mm, -,= adjust threshold_mm";
+	info += "\nview_range_mm: " + ofToString(view_range_mm) + ", threshold_mm: " + ofToString(threshold_mm)
+		+ "    FPS: " + ofToString(ofGetFrameRate());
 	ofDrawBitmapStringHighlight(info, 20, 20);
 }
 
@@ -73,6 +74,8 @@ void ofApp::draw()
 void ofApp::keyPressed(int key){
 	if (key == '1') drawing_page = 1;
 	if (key == '2') drawing_page = 2;
+	if (key == '9') view_range_mm -= 1000;
+	if (key == '0') view_range_mm += 1000;
 	if (key == '-') threshold_mm -= 100;
 	if (key == '=') threshold_mm += 100;
 }

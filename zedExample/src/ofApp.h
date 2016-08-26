@@ -3,20 +3,23 @@
 This is an example of using ofxKuZed addon for ZED camera.
 
 After starting, it draws left and right RGB images,
-depth image and masked image, obtained as left image, 
-truncated by depth values using threshold.
+depth image and also masked image, which is left RGB image, 
+truncated by depth values using depth threshold.
 
-Press '-' and '=' to change threshold.
+Press '9' and '0' to change depth view range (affects depth image).
+Press '-' and '=' to change depth threshold (affects masked image).
 
 Press '2' to switch to point cloud view. 
 
-Here use mouse for changine view position, angle and scale.
+Here use mouse for changing view position, angle and scale.
+Double click to reset view.
 
 Press '1' to switch back to images view.
 
 Keys:
 * '1','2' - select page (images and depth / point cloud)
-* '-','=' - adjust threshold
+* '9','0' - adjust depth view range.
+* '-','=' - adjust depth threshold
 
 Requirements and installation details see in addon's file ofxKuZed.h
 */
@@ -34,10 +37,11 @@ public:
 
 	ofxKuZed zed;
 
-	//computing depth mask using threshold_mm
-	float threshold_mm = 2000;
-	ofPixels masked;
-	ofTexture maskedTexture;
+	float view_range_mm = 5000;		//depth view range
+
+	float threshold_mm = 2000;	//depth threshold
+	ofPixels masked;			//masked image
+	ofTexture maskedTexture;	//masked texture
 
 	//drawing_page: 1 - images, depth, masked, 2 - point cloud
 	int drawing_page = 1;
