@@ -55,8 +55,11 @@ void ofApp::draw()
 	if (drawing_page == 2) {	//draw point cloud
 		ofEnableDepthTest();
 		easyCam.begin();
+		ofPushMatrix();
+		ofScale(0.7, 0.7, 0.7);	//scale view to prevent OpenGL clipping for far objects
 		ofSetColor(255);
 		zed.drawPointCloud();
+		ofPopMatrix();
 		easyCam.end();
 		ofDisableDepthTest();
 	}
