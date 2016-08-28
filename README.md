@@ -1,6 +1,10 @@
 #ofxKuZed
 Addon for working with StereoLab ZED camera in openFrameworks.
 
+Outdoor test: https://www.youtube.com/watch?v=NN55LPlPi3s
+
+Indoor test: https://www.youtube.com/watch?v=-MDdGssqQEk
+
 ZED camera is a passive stereo camera, allowing to obtain depth data on sunlight at distance 20 meters.
 * https://www.stereolabs.com/zed/specs/
 * https://kuflex.wordpress.com/2016/08/18/overview-of-stereolabs-zed-camera-lightweight-outdoors-depth-camera/
@@ -16,11 +20,6 @@ ZED camera is a passive stereo camera, allowing to obtain depth data on sunlight
 
 ![zedCamera](https://github.com/kuflex/ofxKuZed/raw/master/docs/ofxKuZed-1.jpg "zedCamera example")
 
-Outdoor test:
-https://www.youtube.com/watch?v=NN55LPlPi3s
-
-Indoor test:
-https://www.youtube.com/watch?v=-MDdGssqQEk
 
 ##Compiled example
 Binaries of the compiled example are here: https://sourceforge.net/projects/ofxkuzed-zedexample/
