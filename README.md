@@ -1,9 +1,9 @@
 #ofxKuZed
 Addon for working with StereoLab ZED camera in openFrameworks.
 
-Outdoor test: https://www.youtube.com/watch?v=NN55LPlPi3s
-
-Indoor test: https://www.youtube.com/watch?v=-MDdGssqQEk
+Addon videos:
+* Outdoor test: https://www.youtube.com/watch?v=NN55LPlPi3s
+* Indoor test: https://www.youtube.com/watch?v=-MDdGssqQEk
 
 ZED camera is a passive stereo camera, allowing to obtain depth data on sunlight at distance 20 meters.
 * https://www.stereolabs.com/zed/specs/
